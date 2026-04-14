@@ -17,6 +17,8 @@
 
 ```
 git clone git@github.com:mako236630/ai-menu-suggest.git
+```
+```
 cd ai-menu-suggest
 ```
 ```
@@ -25,11 +27,11 @@ docker-compose up -d --build
 
 ## Laravel 環境構築
 
-** Laravel 11の起動プロセスとの競合を避けるため、一旦スクリプトの自動実行をスキップして部品を揃えます。 **
+Laravel 11の起動プロセスとの競合を避けるため、一旦スクリプトの自動実行をスキップして部品を揃えます。
 ```
 docker-compose exec php composer install --no-scripts
 ```
-** .env は、DB接続部分を修正してください。また、GeminiのAPIキーの設定をしてください。 **
+.env は、DB接続部分を修正してください。また、GeminiのAPIキーの設定をしてください。
 ```
 cp .env.example .env
 ```
@@ -37,7 +39,7 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-** Laravel 11の厳格な起動プロセスに対応するため、手動でクラスの地図（オートロード）を更新し、インストールしたパッケージ（Fortify, Gemini等）をシステムに登録します。 **
+Laravel 11の厳格な起動プロセスに対応するため、手動でクラスの地図（オートロード）を更新し、インストールしたパッケージ（Fortify, Gemini等）をシステムに登録します。
 ```
 composer dump-autoload
 ```

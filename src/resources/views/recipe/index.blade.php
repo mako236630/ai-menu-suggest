@@ -14,10 +14,11 @@
             </video>
         </div>
 
-        <form action="{{ route('recipe.generate') }}" method="post">
+        <form action="/recipe/generate" method="post">
             @csrf
             <p class="recipe__explanation">冷蔵庫にある材料や、使いたい材料を入力してください。</p>
-            <input class="recipe__input" type="text" name="ingredients" value="{{ $ingredients ?? '' }}" placeholder="豚肉,キャベツ">
+            <input class="recipe__input" type="text" name="ingredients" value="{{ $ingredients ?? '' }}"
+                placeholder="豚肉,キャベツ">
             <button class="recipe__button" type="submit">レシピを聞く</button>
         </form>
 
@@ -27,26 +28,34 @@
             </div>
         @endif
 
-        @if(isset($recipe))
-            @if($recipe === "冷蔵庫にある材料や、使いたい食材を入力してください！レシピをご提案します！")
-                <p class="recipe__hint">{{ $recipe }}</p>
-            @else
-                <div class="recipe__result">
-                    <h2 class="recipe__result-title">おすすめのレシピ</h2>
+        @if(isset($recipe) || session('recipe'))
+                    @php
+            $displayRecipe = session('recipe') ?? $recipe;
+                    @endphp
 
-                    <div class="recipe__result-body">
-                        {!! nl2br(e($recipe)) !!}
-                    </div>
-                </div>
+                    @if($displayRecipe === "冷蔵庫にある材料や、使いたい食材を入力してください！レシピをご提案します！")
+                        <p class="recipe__hint">{{ $displayRecipe }}</p>
+                    @else
+                        <div class="recipe__result">
+                            <h2 class="recipe__result-title">おすすめのレシピ</h2>
 
-                <form action="{{ route('recipe.store') }}" method="post">
-                    @csrf
-                    <textarea name="recipe_text" hidden readonly>{{ $recipe }}</textarea>
-                    <div class="recipe__store-button">
-                        <button class="recipe__button" type="submit">レシピを保存する</button>
-                    </div>
-                </form>
-            @endif
+                            <div class="recipe__result-body">
+                                {!! nl2br(e($displayRecipe)) !!}
+                            </div>
+                        </div>
+
+                        @if(!session('message'))
+                            <form action="/recipe/store" method="post">
+                                @csrf
+                                <textarea name="recipe_text" hidden readonly>{{ $displayRecipe }}</textarea>
+                                <div class="recipe__store-button">
+                                    <button class="recipe__button" type="submit">レシピを保存する</button>
+                                </div>
+                            </form>
+                            @else
+                                <div class="recipe__store"></div>
+                            @endif
+                    @endif
         @endif
     </div>
 

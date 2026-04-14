@@ -52,6 +52,10 @@ class RecipeController extends Controller
             'image_path' => null,
         ]);
 
-        return back()->with('message', 'レシピを保存しました！');
+        return redirect()->route('recipe.index')->with([
+            'message' => 'レシピを保存しました！',
+            'recipe' => $recipe_data,
+            'ingredients' => $request->input('ingredients'),
+    ]);
     }
 }

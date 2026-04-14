@@ -90,3 +90,8 @@
 .recipe__save-button {
     margin-top: 4px;
 }
+
+.recipe__store {
+    display: block;
+    margin-bottom: 30px;
+}

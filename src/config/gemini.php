@@ -1,0 +1,8 @@
+<?php
+
+return [
+    /**
+     * Google Gemini API Key
+     */
+    'api_key' => env('GEMINI_API_KEY'),
+];

@@ -23,19 +23,26 @@ docker-compose up -d --build
 
 **Laravel 環境構築**
 
+### Laravel 11の起動プロセスとの競合を避けるため、一旦スクリプトの自動実行をスキップして部品を揃えます。
 ```
-docker-compose exec php bash
-composer install
+docker-compose exec php composer install --no-scripts
+```
+### .env は、DB接続部分を修正してください。
+また、GeminiのAPIキーの設定をしてください。
+```
 cp .env.example .env
 ```
 
-.env は、DB接続部分を修正してください。
-また、GeminiのAPIキーの設定をしてください。
-
 ```
 php artisan key:generate
-php artisan migrate
-php artisan db:seed
+```
+### Laravel 11の厳格な起動プロセスに対応するため、手動でクラスの地図（オートロード）を更新し、インストールしたパッケージ（Fortify, Gemini等）をシステムに登録します。
+'''
+composer dump-autoload
+php artisan package:discover
+```
+```
+php artisan migrate --seed
 php artisan storage:link
 ```
 

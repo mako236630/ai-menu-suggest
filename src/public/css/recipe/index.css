@@ -1,0 +1,92 @@
+.recipe__main {
+    width: 100%;
+    text-align: center;
+}
+
+.logo__image {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-video {
+    width: 600px;
+    height: auto;
+}
+
+.recipe__explanation {
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 25px;
+    color: #5b3838;
+}
+
+.flash__message {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #ff8b8b;
+}
+
+.recipe__input {
+    padding: 10px 10px;
+    border: 2px solid #5b3838;
+    border-radius: 7px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.recipe__store-button {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.recipe__button {
+    padding: 10px 10px;
+    background-color: #ff8b8b;
+    border-radius: 7px;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+.recipe__hint {
+    max-width: 640px;
+    margin: 24px auto 0;
+    padding: 16px 20px;
+    color: #5b3838;
+    font-size: 17px;
+    line-height: 1.6;
+    background-color: #fff5f5;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+}
+
+.recipe__result {
+    max-width: 640px;
+    margin: 28px auto 0;
+    padding: 20px 24px 24px;
+    text-align: left;
+    color: #5b3838;
+    background-color: #fffaf8;
+    border: 1px solid #e8d4d4;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(91, 56, 56, 0.08);
+}
+
+.recipe__result-title {
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ff8b8b;
+    color: #ff8b8b;
+    font-size: 1.35rem;
+}
+
+.recipe__result-body {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    word-break: break-word;
+}
+
+.recipe__save-button {
+    margin-top: 4px;
+}

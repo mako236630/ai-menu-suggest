@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MypageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipeController;
 
@@ -17,4 +18,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/recipe', [RecipeController::class, 'index'])->name('recipe.index');
     Route::post('/recipe/generate', [RecipeController::class, 'generate'])->name('recipe.generate');
     Route::post('/recipe/store', [RecipeController::class, 'store'])->name('recipe.store');
+    Route::get('/recipe/mypage', [MypageController::class, 'index'])->name('mypage.index');
+    Route::post('/recipe/uploadImage/{recipe}', [MypageController::class, 'uploadImage'])->name('recipe.upload');
+    Route::delete('/recipe/delete/{recipe}', [MypageController::class, 'delete'])->name('recipe.delete');
 });

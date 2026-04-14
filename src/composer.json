@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/fortify": "^1.36",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9"
@@ -53,7 +54,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

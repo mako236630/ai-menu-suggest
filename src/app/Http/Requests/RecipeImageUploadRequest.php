@@ -32,10 +32,6 @@ class RecipeImageUploadRequest extends FormRequest
         ];
     }
 
-    /**
-     * バリデーション失敗時：エラーを「レシピID付きの名前の箱」に入れる。
-     * Blade 側は @error の第2引数で同じ名前を指定すると、そのカードだけ表示される。
-     */
     protected function failedValidation(Validator $validator): void
     {
         $recipe = $this->route('recipe');

@@ -1,1 +1,62 @@
-# laravel-docker-template
+# AI recipe アプリ
+
+## 概要
+
+- できること：Gemini APIを活用し、ユーザーの持っている食材や気分に合わせたレシピを即座に提案・保存できる献立サポートアプリです。
+- 工夫した点： 学習目的で外部APIの扱いに慣れたく、AIにレシピ文を生成してもらう処理を実装しました。返ってきたテキストをルールに沿って分割し、料理名・材料・手順としてDBに保存できる形に落とし込みました。
+
+## 主な機能
+
+### 一般ユーザー
+
+- 会員登録・ログイン・ログアウト
+- AI（Gemini）でレシピを生成・保存
+- マイページで保存レシピの確認・画像アップロード・削除
+
+## 環境構築
+
+```
+git clone git@github.com:mako236630/ai-menu-suggest.git
+cd ai-menu-suggest
+docker-compose up -d --build
+```
+
+**Laravel 環境構築**
+
+```
+docker-compose exec php bash
+composer install
+cp .env.example .env
+```
+
+.env は、DB接続部分を修正してください。
+また、GeminiのAPIキーの設定をしてください。
+
+```
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan storage:link
+```
+
+※ 環境構築後、画像が正しく表示されない場合は php artisan storage:link が実行されているか再度確認してください。
+
+## テスト
+
+```
+docker-compose exec php bash
+php artisan test
+```
+
+## 開発環境
+
+- ログイン画面: http://localhost/login
+- 会員登録画面: http://localhost/register
+- phpMyAdmin: http://localhost:8080/
+
+## 使用技術
+
+- nginx 1.21.1
+- MySQL 8.0.26
+- php 8.2.30
+- Laravel 11.51.0

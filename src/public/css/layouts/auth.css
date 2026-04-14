@@ -1,0 +1,24 @@
+body {
+    max-width: 1540px;
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav {
+    max-width: 1540px;
+    padding: 10px;
+    background-color: #ff8b8b;
+}
+
+h1 {
+    color: white;
+    padding-left: 20px;
+}
+
+.main {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+}

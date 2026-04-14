@@ -1,0 +1,41 @@
+body {
+    max-width: 1540px;
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav {
+    max-width: 1540px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #ff8b8b;
+    gap: 120px;
+}
+
+a {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #ff8b8b;
+}
+
+.main {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.logout__button {
+    padding: 10px 10px;
+    background-color: #ff8b8b;
+    border-radius: 7px;
+    color: white;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}

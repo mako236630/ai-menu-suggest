@@ -64,7 +64,10 @@ php artisan test
 
 ## 開発環境
 
-- ログイン画面: http://localhost/login
+- ログイン画面: http://localhost/login  
+機能確認には、以下のテストアカウントをご利用ください。  
+メールアドレス: test@example.com  
+パスワード: password  
 - 会員登録画面: http://localhost/register
 - phpMyAdmin: http://localhost:8080/
 

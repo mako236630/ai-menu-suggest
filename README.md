@@ -77,3 +77,4 @@ php artisan test
 - MySQL 8.0.26
 - php 8.2.30
 - Laravel 11.51.0
+- AI Support Gemini/Cursor
